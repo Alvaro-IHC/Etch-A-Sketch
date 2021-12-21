@@ -4,6 +4,7 @@ html {
 }
 *, *::after, *::before{
     box-sizing: inherit;
+    margin: 0;
 }
 body{
     font-size: 1.6rem;
@@ -11,15 +12,23 @@ body{
     margin: 0;
     /* width: 98%; */
     height: 100vh;
-    background: linear-gradient(135deg, rgb(248, 248, 217), rgba(61, 58, 8, 0.7));
+    /* background: linear-gradient(135deg, rgb(248, 248, 217), rgba(61, 58, 8, 0.7)); */
+    background-attachment: fixed;
+
+    background: white
 }
 
 h1 {
     text-align: center;
     font-size: 4rem;
-    margin: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
-
+@media (min-width: 480px){
+    h1 {
+        margin-top: 0;
+    }
+}
 .controls{
     display: flex;
     flex-direction: column;
@@ -40,13 +49,33 @@ button{
     margin-bottom: 1.5rem;
     /* width: 250; */
 }
+@media (min-width: 480px){
+    button{
+        width: 15rem;
+        height: 3rem;
+    }
+}
+
 .container-checks{
     display: flex;
     flex-direction: column;
-    font-size: 2rem;
-    
+    font-size: 2rem;   
 }
-
+@media (min-width: 480px){
+    .container-checks{
+        flex-direction: row;
+        justify-content:space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        
+        width: 50%;
+    }
+    .container-checks .option{
+        flex-basis: 33%;
+        text-align: center;
+        font-size: 1.6rem;
+    }
+}
 .container-sliders{
     
     display: flex;
@@ -56,9 +85,23 @@ button{
     padding-left: 3.5rem;
     padding-top: 1rem;
 }
+@media (min-width: 480px){
+    .container-sliders{
+        flex-direction: row;
+        padding-left: 0;
+        justify-content:space-between;
+    }
+}
+
 .box-slider{
-    
     flex-basis: 3.5rem;
+}
+@media (min-width: 480px){
+    .box-slider{
+        flex-basis: 30%;
+        gap: 5rem;
+        margin-bottom: 2rem;
+    }
 }
 .slider{
     width: 100%;
@@ -68,6 +111,7 @@ button{
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.116);
 }
 .item{
     border-radius: 50%;
@@ -76,7 +120,8 @@ button{
     -webkit-appearance: none;
     color: green;
     height: 8px;
-    /* transform: rotate(90deg); */
+    border: 0.2px solid black;
+    border-radius: 10px;
     opacity: 0.8;
     -webkit-box-shadow: 15px 14px 54px 10px rgba(0,0,0,0.37);
     -moz-box-shadow: 15px 14px 54px 10px rgba(0,0,0,0.37);

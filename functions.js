@@ -6,7 +6,7 @@ let containerWidth;
 let amount = 16;
 let items;
 let sliders = document.querySelectorAll(".slider");
-let red = 127, green = 127, blue = 127;
+let red = 255, green = 255, blue = 255;
 let color;
 const rbtBlack = document.querySelector(".black");
 const rbtRandom = document.querySelector(".random");
@@ -33,10 +33,10 @@ function setup(){
     if(bodyWidth < 480){
         containerWidth = bodyWidth*0.9;
     }else{
-        containerWidth = bodyWidth*0.4;
+        containerWidth = bodyWidth*0.35;
     }
     let itemWidth = parseInt(containerWidth/amount+"");
-    containerWidth = itemWidth * amount;
+    containerWidth = itemWidth * amount+2;
     container.style.width = ""+containerWidth+"px";
     for(let i = 0; i < amount*amount; i++){
         const div = document.createElement("div");
@@ -73,7 +73,15 @@ function setEventBG(){
 
 // Events Asignation
 btn.addEventListener("click", ()=>{
-    amount = prompt("Enter new amount: ");
+    while(true){
+        amount = prompt("Enter new amount: ");
+        if (amount >= 0 && amount <= 100){
+            break;
+        }else{
+            alert("Invalid input!");
+        }
+    }
+    
     items.forEach(item => {
         container.removeChild(item);
     });
