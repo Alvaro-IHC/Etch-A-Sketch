@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch A Sketch</title>
+    <script src="functions.js" defer></script>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Etch A Sketch</h1>
+    <div class="controls">
+        <button>Clear</button>
+        <div class="container-checks">
+            <!-- <div class="option">
+                <input type="radio" class="check black" name="black" id="black" checked name="radio">
+                <label for="black">Black color</label>
+            </div>
+            <div class="option">    
+                <input type="radio" class="check random" name="random" id="random" name="radio">
+                <label for="random">Random color</label>
+            </div>
+            <div class="option">    
+                <input type="radio" class="check choose" name="choose" id="choose"  name="radio">
+                <label for="choose">Choose a color</label>
+            </div>
+             -->
+
+            <label for="black">
+                <input type="radio" class="check black" id="black" checked name="radio">Black color
+            </label>
+            <label for="random">
+                <input type="radio" class="check random" id="random" name="radio">Random color
+            </label>
+            <label for="choose">
+                <input type="radio" class="check choose" id="choose" name="radio">Choose a color
+            </label>
+        </div>
+        <div class="container-sliders">
+            <div class="box-slider">
+                <input type="range" class="red slider" min="0" max="255" value="127">
+            </div>
+            <div class="box-slider">
+                <input type="range" class="green slider" min="0" max="255" value="127">
+            </div>
+            <div class="box-slider">
+                <input type="range" class="blue slider" min="0" max="255" value="127">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+    </div>
+</body>
+
+</html>
